@@ -43,7 +43,6 @@ const getTask = async (req, res) => {
 const updateTaskStatus = async (req, res) => {
     try {
         const body = req.body;
-        console.log(body)
         const docToUpdate = await taskModel.updateOne(
             {_id:body._id,},
             body

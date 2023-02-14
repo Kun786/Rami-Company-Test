@@ -59,7 +59,6 @@ export class AppComponent {
     userRole4: this.userFour,
     showButton: true
     };
-    console.log(objectToUpdate)
     this.ClientManagementService.updateTaskStatus(objectToUpdate).subscribe(({ message, data }: any) => {
     this.ToastrService[data ? 'success' : 'error'](message);
     this.getTask();
