@@ -18,7 +18,10 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      maxOpened:1,
+      autoDismiss:true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
