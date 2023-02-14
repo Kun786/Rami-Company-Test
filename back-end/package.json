@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express.js": "^1.0.0"
+    "cors": "^2.8.5",
+    "express.js": "^1.0.0",
+    "mongoose": "^6.9.1"
   }
 }
