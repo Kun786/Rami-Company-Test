@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.text());
 app.use(express.raw());
 app.use(cors());
-const PORT = process.env.PORT || 5665;
+const PORT = 5665;
 //Block End Intialize the app
 
 
