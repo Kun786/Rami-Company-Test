@@ -7,6 +7,7 @@ const taskModel = mongoose.Schema({
     userRole3: { type: Boolean, default: false },
     userRole4: { type: Boolean, default: false },
     stage: { type: String },
+    showButton: { type: Boolean, default: false}
 }, { timestamps: true })
 
 // Export Schema

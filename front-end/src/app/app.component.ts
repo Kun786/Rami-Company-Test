@@ -57,6 +57,7 @@ export class AppComponent {
     userRole2: this.userTwo,
     userRole3: this.userThree,
     userRole4: this.userFour,
+    showButton: true
     };
     console.log(objectToUpdate)
     this.ClientManagementService.updateTaskStatus(objectToUpdate).subscribe(({ message, data }: any) => {
