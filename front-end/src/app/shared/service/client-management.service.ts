@@ -11,15 +11,15 @@ export class ClientManagementService {
   ) { }
 
   createTask(payLoad:any){
-    return this.HttpClient.post('http://localhost:5665/clientManagement/createTask', payLoad)
+    return this.HttpClient.post('http://localhost:4444/taskManagement/createTask', payLoad)
   }
 
   getTask(){
-    return this.HttpClient.get('http://localhost:5665/clientManagement/getTask')
+    return this.HttpClient.get('http://localhost:4444/taskManagement/getTask')
   }
   
   updateTaskStatus(payLoad:any){
-    return this.HttpClient.post('http://localhost:5665/clientManagement/updateTaskStatus',payLoad)
+    return this.HttpClient.post('http://localhost:4444/taskManagement/updateTaskStatus',payLoad)
   }
 
 }

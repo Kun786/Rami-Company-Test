@@ -1,4 +1,4 @@
-<div class="container">
+_<div class="container">
     <div class="row">
         <div class="col">
             <h5>Ideas</h5>
@@ -8,7 +8,7 @@
                     aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div class="my-3">
-                <button type="button" class="btn btn-outline-dark w-100" (click)="addTask()">Add Task</button>
+                <button type="button" class="btn btn-outline-dark w-100" (click)="addTask()" *ngIf="task.stage==='Add Task'">Add Task</button>
             </div>
         </div>
         <div class="col">
@@ -37,21 +37,103 @@
         </div>
     </div>
     <div class="row">
-        <div class="col" ngClass="col-lg-3">
-            <ng-container>
+        <div class="col" >
+            <ng-container *ngIf="task?.stage === 'Add Task'">
+                <div>
+                    <P>{{task?.task}}</P><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" [(ngModel)]="userTwo"
+                        [ngModelOptions]="{standalone: true}">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Approved by User 2
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" [(ngModel)]="userThree"
+                        [ngModelOptions]="{standalone: true}">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Approved by User 3
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" [(ngModel)]="userFour"
+                        [ngModelOptions]="{standalone: true}">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Approved by User 4
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary" (click)="addVote({_id:task._id, stage:'To Writing'})">Approved</button>
+                    
+                </div>
+            </ng-container>
+        </div>
+        <div class="col">
+            <ng-container *ngIf="task?.stage === 'To Writing'">
+                <div>
+                    <P>{{task?.task}}</P><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" [(ngModel)]="userTwo"
+                        [ngModelOptions]="{standalone: true}">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Approved by User 2
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" [(ngModel)]="userThree"
+                        [ngModelOptions]="{standalone: true}">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Approved by User 3
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" [(ngModel)]="userFour"
+                        [ngModelOptions]="{standalone: true}">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Approved by User 4
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary" (click)="addVote({_id:task._id, stage:'To Editing'})">Approved</button>
+                    
+                </div>
+            </ng-container>
+        </div>
+        <div class="col">
+            <ng-container *ngIf="task?.stage === 'To Editing'">
+                <div>
+                    <P>{{task?.task}}</P><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" [(ngModel)]="userTwo"
+                        [ngModelOptions]="{standalone: true}">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Approved by User 2
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" [(ngModel)]="userThree"
+                        [ngModelOptions]="{standalone: true}">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Approved by User 3
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" [(ngModel)]="userFour"
+                        [ngModelOptions]="{standalone: true}">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Approved by User 4
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary" (click)="addVote({_id:task._id, stage:'To Promoting'})">Approved</button>
+                    
+                </div>
+            </ng-container>
+        </div>
+        <div class="col">
+            <ng-container *ngIf="task?.stage === 'To Promoting'">
                 <div>
                     <P>{{task?.task}}</P><br>
                     <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" #option>
-                          <option selected>User Role</option>
-                          <option value="userTwo">Two</option>
-                          <option value="userThree">Three</option>
-                          <option value="userFour">Four</option>
-                        </select>
-                        <label for="floatingSelect">Works with selects</label>
-                      </div>
-                    <button type="button" class="btn btn-outline-primary" (click)="addVote(option)">Approved</button>
-                    <button type="button" class="btn btn-outline-danger" (click)="removeVote()">Rejected</button>
+                        <h1>Task is Approved Congratulaitons!</h1>
+                    </div>
                 </div>
             </ng-container>
         </div>

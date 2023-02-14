@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+require('./configuration/loadMyEnviormentVariables');
 require('./configuration/databaseConfiguration');
 //Block End Dependencies
 
@@ -13,7 +14,7 @@ app.use(express.json());
 app.use(express.text());
 app.use(express.raw());
 app.use(cors());
-const PORT = 4444;
+const PORT = process.env.PORT || 9494;
 //Block End Intialize the app
 
 
